@@ -1,0 +1,50 @@
+{
+  "name": "monitor",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "node ./lib/build",
+    "build-uat": "export EGG_SERVER_ENV=unittest && npm run build",
+    "build-qa": "export EGG_SERVER_ENV=qa && npm run build",
+    "build-stage": "export EGG_SERVER_ENV=stage && npm run build",
+    "build-product": "export EGG_SERVER_ENV=prod && npm run build",
+    "lint": "eslint .",
+    "test": "egg-bin test",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "start-bg": "eggctl start --daemon",
+    "start": "eggctl start",
+    "stop": "eggctl stop",
+    "offline": "node ./lib/heartcheck/offline",
+    "online": "node ./lib/heartcheck/online"
+  },
+  "dependencies": {
+    "egg": "^2.3.0",
+    "egg-scripts": "^2.5.0",
+    "egg-validate": "^1.0.0"
+  },
+  "devDependencies": {
+    "autod": "^2.8.0",
+    "autoprefixer-loader": "^3.2.0",
+    "cross-env": "^5.0.5",
+    "egg-bin": "^3.4.0",
+    "egg-ci": "^1.7.0",
+    "eslint": "^4.12.0",
+    "eslint-config-egg": "^4.2.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "ci": {
+    "version": "6, 8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "files": [
+    "index.js"
+  ],
+  "author": "",
+  "license": "MIT"
+}
